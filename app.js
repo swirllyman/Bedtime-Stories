@@ -168,17 +168,50 @@
   }
 
   // ---------- views ----------
+  // Tonight's set: the scheduled picks, unless the shuffle button swapped them for this night.
+  var SHUFFLE_KEY = 'bs.shuffle';
+  function currentSet(data) {
+    if (!data.nights.length) return null;
+    var night = data.nights[0];
+    var sh = load(SHUFFLE_KEY, null);
+    if (sh && sh.date === night.date && Array.isArray(sh.ids)) {
+      var list = sh.ids.map(function (id) { return data.byId[id]; }).filter(Boolean);
+      if (list.length) return { date: night.date, stories: list.sort(byAge), shuffled: true };
+    }
+    return { date: night.date, stories: night.stories.slice().sort(byAge), shuffled: false };
+  }
+  function shuffleSet(data, current) {
+    var avoid = current.stories.map(function (s) { return s.id; });
+    var ids = AGE_ORDER.map(function (age) {
+      var pool = data.stories.filter(function (s) { return s.age === age && avoid.indexOf(s.id) === -1; });
+      if (!pool.length) pool = data.stories.filter(function (s) { return s.age === age; });
+      return pool.length ? pool[Math.floor(Math.random() * pool.length)].id : null;
+    }).filter(Boolean);
+    save(SHUFFLE_KEY, { date: current.date, ids: ids });
+  }
+
+  function storyCard(s) {
+    return h('li', null,
+      h('a', { href: '#/story/' + s.id, class: 'card' },
+        s.image ? h('img', { src: s.image, alt: '', loading: 'lazy', width: '360', height: '480' }) : null,
+        h('span', { class: 'card-title', text: s.title + (isFavorite(s.id) ? ' ♥' : '') }),
+        h('span', { class: 'card-age', text: 'Ages ' + s.age }),
+        h('span', { class: 'card-blurb', text: s.blurb || s.summary })));
+  }
+
   function viewTonight() {
     getData().then(function (data) {
-      if (!data.nights.length) return render(h('h1', { text: 'No stories yet' }),
+      var set = currentSet(data);
+      if (!set) return render(h('h1', { text: 'No stories yet' }),
         h('p', { class: 'quiet', text: 'Tonight’s stories are picked every morning.' }));
-      var night = data.nights[0];
-      var tonight = night.stories.slice().sort(byAge);
-      var sugg = suggestions(data, 3, tonight.map(function (s) { return s.id; }));
+      var sugg = suggestions(data, 3, set.stories.map(function (s) { return s.id; }));
       render(
         h('h1', { text: 'Tonight’s stories' }),
-        h('p', { class: 'meta', text: formatDate(night.date, true) }),
-        storyList(tonight, { summary: true }),
+        h('p', { class: 'meta', text: formatDate(set.date, true) + (set.shuffled ? ' · shuffled' : '') }),
+        h('ul', { class: 'cards' }, set.stories.map(storyCard)),
+        h('p', { class: 'shuffle-row' },
+          h('button', { type: 'button', class: 'shuffle', onclick: function () { shuffleSet(data, set); viewTonight(); }, text: '⤮ Shuffle' }),
+          set.shuffled ? h('button', { type: 'button', onclick: function () { save(SHUFFLE_KEY, null); viewTonight(); }, text: 'Back to tonight’s picks' }) : null),
         h('h2', { text: 'Suggested for you' }),
         sugg.length
           ? h('ul', { class: 'story-list' }, sugg.map(function (x) { return storyItem(x.story, { reason: x.reason }); }))
@@ -377,7 +410,7 @@
       paintStars();
 
       // Next: the next of tonight's stories, otherwise the top suggestion.
-      var tonight = data.nights.length ? data.nights[0].stories.slice().sort(byAge) : [];
+      var cur = currentSet(data); var tonight = cur ? cur.stories : [];
       var pos = tonight.map(function (s) { return s.id; }).indexOf(id);
       var next = pos !== -1 && pos < tonight.length - 1 ? tonight[pos + 1] : null;
       if (!next) {

@@ -1,0 +1,149 @@
+/* Bedtime Stories: plain, calm, easy on the eyes in a dark room. */
+
+:root {
+  --text-size: 21px;
+  --measure: 34em;
+  --font: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+}
+
+:root[data-theme="dark"] {
+  --bg: #141210;
+  --text: #c9c2b8;
+  --quiet: #8a8379;
+  --rule: #2b2724;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5efe3;
+  --text: #3b2f25;
+  --quiet: #7a6a5a;
+  --rule: #e2d8c6;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--text-size);
+  line-height: 1.7;
+  padding: 0 20px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+main, header.top, footer.controls {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+main:focus { outline: none; }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+/* Generous tap targets for one-handed use */
+nav a, .controls button, .star, .story-list a, .back {
+  display: inline-block;
+  min-height: 44px;
+  padding: 8px 0;
+}
+
+header.top {
+  padding-top: max(12px, env(safe-area-inset-top));
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.2em;
+}
+
+nav { display: flex; gap: 1.2em; flex-wrap: wrap; font-size: 0.9em; }
+nav a { text-decoration: none; color: var(--quiet); }
+nav a[aria-current="page"] { color: var(--text); text-decoration: underline; }
+
+h1, h2, h3 {
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+h1 { font-size: 1.45em; margin: 0.4em 0 0.3em; }
+h2 { font-size: 1.1em; margin: 1.8em 0 0.4em; color: var(--quiet); }
+
+p { margin: 0 0 1em; }
+
+.quiet { color: var(--quiet); }
+.meta { color: var(--quiet); font-size: 0.85em; margin-bottom: 1.2em; }
+
+.story-list { list-style: none; padding: 0; margin: 0; }
+.story-list li { padding: 0.5em 0 0.8em; border-bottom: 1px solid var(--rule); }
+.story-list li:last-child { border-bottom: none; }
+.story-list a { font-size: 1.1em; padding-bottom: 0; }
+.story-list .meta { margin: 0; }
+.story-list .summary { margin: 0.2em 0 0; font-size: 0.9em; }
+
+.story-text p { margin-bottom: 1.1em; }
+.the-end { text-align: center; color: var(--quiet); margin: 2em 0 1em; }
+
+.story-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1em;
+  border-top: 1px solid var(--rule);
+  margin-top: 1.5em;
+  padding-top: 0.5em;
+  font-size: 0.9em;
+}
+
+.star { font-size: 0.95em; }
+
+footer.controls {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.5em;
+  padding: 0.5em 0 2em;
+  font-size: 0.8em;
+  color: var(--quiet);
+  display: flex;
+  gap: 0.8em;
+  align-items: center;
+}
+
+.controls button { color: var(--quiet); }
+.sep { color: var(--rule); }
+
+textarea {
+  width: 100%;
+  min-height: 5em;
+  font: 0.8em/1.4 ui-monospace, Menlo, monospace;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.6em;
+}
+
+.tools { margin-top: 2.5em; font-size: 0.85em; }
+.tools p { color: var(--quiet); }
+.tools button { min-height: 44px; margin-right: 1.2em; }

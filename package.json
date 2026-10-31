@@ -1,0 +1,13 @@
+{
+  "name": "bedtime-stories",
+  "private": true,
+  "type": "module",
+  "description": "Three new bedtime stories every day, as a plain static site.",
+  "scripts": {
+    "generate": "node scripts/generate.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0"
+  }
+}

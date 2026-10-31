@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bedtime Stories</title>
+  <meta name="description" content="Three new bedtime stories every day.">
+  <meta name="theme-color" content="#141210" id="theme-color">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    // Apply saved theme and text size before first paint, so the screen never flashes bright.
+    (function () {
+      var theme = 'dark', size = '';
+      try {
+        theme = localStorage.getItem('bs.theme') || 'dark';
+        size = localStorage.getItem('bs.size') || '';
+      } catch (e) {}
+      var root = document.documentElement;
+      root.setAttribute('data-theme', theme);
+      if (size) root.style.setProperty('--text-size', size + 'px');
+      document.getElementById('theme-color').setAttribute('content', theme === 'light' ? '#f5efe3' : '#141210');
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <nav aria-label="Main">
+      <a href="#/" data-nav="tonight">Tonight</a>
+      <a href="#/archive" data-nav="archive">Archive</a>
+      <a href="#/favorites" data-nav="favorites">Favorites</a>
+    </nav>
+  </header>
+
+  <main id="view" tabindex="-1">
+    <p class="quiet">Loading…</p>
+  </main>
+
+  <footer class="controls" aria-label="Reading settings">
+    <button type="button" id="theme-toggle">Light mode</button>
+    <span class="sep" aria-hidden="true">·</span>
+    <button type="button" id="size-down" aria-label="Smaller text">A−</button>
+    <button type="button" id="size-up" aria-label="Larger text">A+</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

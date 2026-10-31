@@ -1,0 +1,29 @@
+{
+  "updated": "2026-10-31T23:09:48.475Z",
+  "stories": [
+    {
+      "id": "2026-10-31-1",
+      "title": "Night Night, Little Farm",
+      "age": "1–2",
+      "minutes": 1,
+      "summary": "A soft, repeating goodnight to the cow, the hen, the pig, and the moon over a sleepy farm.",
+      "date": "2026-10-31"
+    },
+    {
+      "id": "2026-10-31-2",
+      "title": "The Littlest Pumpkin's Lantern",
+      "age": "3–4",
+      "minutes": 2,
+      "summary": "A small pumpkin on a quiet porch learns her soft glow is just right for helping a sleepy moth find home.",
+      "date": "2026-10-31"
+    },
+    {
+      "id": "2026-10-31-3",
+      "title": "Otto and the Cloud Ferry",
+      "age": "5–6",
+      "minutes": 3,
+      "summary": "A curious otter rides a fluffy cloud ferry across the night sky to deliver a lost star back home.",
+      "date": "2026-10-31"
+    }
+  ]
+}

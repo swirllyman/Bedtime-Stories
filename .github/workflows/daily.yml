@@ -23,20 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install
-        run: npm ci
-
-      - name: Generate today's stories
-        # Code pushes only redeploy the site; scheduled and manual runs also write stories.
+      - name: Pick tonight's stories
+        # Code pushes only redeploy the site; scheduled and manual runs also pick stories.
         if: github.event_name != 'push'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/generate.mjs
+        run: node scripts/rotate.mjs
 
       - name: Commit new stories
         if: github.event_name != 'push'
@@ -47,7 +37,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new stories to commit."
           else
-            git commit -m "Add stories for $(TZ=America/Los_Angeles date +%Y-%m-%d)"
+            git commit -m "Pick stories for $(TZ=America/Los_Angeles date +%Y-%m-%d)"
             git push
           fi
 

@@ -144,6 +144,31 @@ textarea {
   padding: 0.6em;
 }
 
+.small { font-size: 0.85em; }
+.reason { margin: 0.2em 0 0; font-size: 0.85em; color: var(--quiet); font-style: italic; }
+
+.story-text p.verse { white-space: pre-line; }
+.moral { font-style: italic; text-align: center; margin: 1.5em 0 0; }
+
+.sortbar { font-size: 0.85em; color: var(--quiet); }
+.sortbar a, .sortbar strong { display: inline-block; min-height: 44px; padding: 8px 0; }
+.sortbar strong { color: var(--text); font-weight: normal; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+h2 a { color: inherit; }
+
+.rating { text-align: center; border-top: 1px solid var(--rule); padding-top: 0.8em; }
+.rating-q { margin: 0; color: var(--quiet); font-size: 0.9em; }
+.rate-row { display: flex; justify-content: center; gap: 0.1em; }
+.rate { text-decoration: none; font-size: 1.6em; min-width: 48px; min-height: 48px; line-height: 1; }
+.rating-word { margin: 0; color: var(--quiet); font-size: 0.85em; min-height: 1.5em; }
+
+.source { color: var(--quiet); font-size: 0.75em; margin-top: 2em; line-height: 1.6; }
+
+.chart { margin-bottom: 1em; }
+.chart-row { padding: 0.35em 0; }
+.chart-label { font-size: 0.85em; }
+.chart-track { height: 8px; background: var(--rule); border-radius: 4px; margin-top: 0.25em; }
+.chart-bar { height: 8px; background: var(--quiet); border-radius: 4px; }
+
 .tools { margin-top: 2.5em; font-size: 0.85em; }
 .tools p { color: var(--quiet); }
 .tools button { min-height: 44px; margin-right: 1.2em; }

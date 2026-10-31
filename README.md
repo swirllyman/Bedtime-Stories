@@ -1,33 +1,40 @@
 # Bedtime Stories
 
-Three new bedtime stories every day for kids ages 1 to 6, as a plain, text-only site on GitHub Pages.
+A plain, dim-screen-friendly page of bedtime stories for ages 1 to 6, hosted on GitHub Pages.
 
-- **Tonight**: today's 3 stories (ages 1–2, 3–4, 5–6).
-- **Archive**: every story so far, newest first.
-- **Favorites**: stories you starred, saved in your phone's browser (with a backup code you can copy and restore).
-- Dark mode by default, a light mode toggle, and A− / A+ text size. The screen stays awake while a story is open.
+Every morning a GitHub Action picks three stories for tonight (one each for ages 1–2, 3–4 and 5–6) from a library of public-domain classics, rotating so every story comes up before any repeats.
 
-## How it works
+## Where the stories come from
 
-A GitHub Action (`.github/workflows/daily.yml`) runs every morning (US Pacific). It calls Claude to write 3 stories, saves them in `stories/`, commits them, and redeploys the site. Pushing code to `main` also redeploys the site, without generating stories.
+All stories are public domain, taken word for word from Project Gutenberg editions:
 
-```
-stories/index.json        list of every story (what the site reads)
-stories/YYYY-MM-DD.json   that day's 3 full stories
-scripts/generate.mjs      the generator
-```
+- *The Real Mother Goose* (1916): nursery rhymes, grouped five to a night
+- *The Aesop for Children* (1919): short fables with their morals
+- Beatrix Potter: *Peter Rabbit*, *Mrs. Tiggy-Winkle*, *Mrs. Tittlemouse*, *Two Bad Mice*
+- Thornton W. Burgess, *Old Mother West Wind* (1910)
 
-## Setup
+Old books can carry things you would not read to a small child today, so each piece was screened by hand. Rhymes and stories with violence, hunting, punishment by beating, death, or ethnic and racial caricature were left out.
 
-1. **Settings → Pages**: set *Source* to **GitHub Actions**.
-2. **Settings → Secrets and variables → Actions**: add a secret named `ANTHROPIC_API_KEY` (create a key at console.anthropic.com; setting a monthly spend limit there is a good idea).
-3. **Actions → Daily stories and site deploy → Run workflow** to generate today's stories right away.
+## Features
 
-The site lives at `https://<your-username>.github.io/<repo-name>/`.
+- **Tonight**: three stories, plus suggestions based on what you have rated.
+- **Library**: every story, grouped by author, kind of story, age, rating or title. Tap an author or kind of story to see all of them.
+- **Ratings**: one to five stars at the end of every story. Ratings and favorites feed the suggestions.
+- **Likes**: bar charts of average stars by author, kind of story and theme, and what to try next.
+- **Favorites**, with a backup code you can copy to another phone.
+- Dark and light modes, adjustable text size, and the screen stays awake while a story is open.
 
-## Changing things
+Favorites and ratings live in your phone's browser storage, not on the server.
 
-- **Time of day**: edit the `cron` line in `daily.yml` (it's in UTC).
-- **Model**: set `STORY_MODEL` in the workflow's `env` (default `claude-sonnet-5-5`).
-- **Story style or lengths**: edit `SYSTEM` and `buildPrompt` in `scripts/generate.mjs`.
-- **Regenerate a day**: `node scripts/generate.mjs 2026-11-05 --force` locally with `ANTHROPIC_API_KEY` set.
+## Running it
+
+1. In the repo's **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Run the **Daily stories and site deploy** workflow once from the Actions tab.
+
+The site is then at `https://swirllyman.github.io/Bedtime-Stories/`. To test locally, run `python3 -m http.server` in the repo and open `http://localhost:8000`.
+
+To pick a night by hand: `node scripts/rotate.mjs 2026-11-05`.
+
+## Adding stories
+
+Add entries to `stories/library.json`. Each story has an `id`, `title`, `age` (`1–2`, `3–4` or `5–6`), `author`, `genre`, `tags`, `summary`, `minutes`, `source`, optional `moral`, and `paragraphs`.

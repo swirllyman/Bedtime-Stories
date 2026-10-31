@@ -41,6 +41,7 @@ body {
 }
 
 main, header.top, footer.controls {
+  flex-wrap: wrap;
   max-width: var(--measure);
   margin: 0 auto;
 }
@@ -120,6 +121,7 @@ p { margin: 0 0 1em; }
 .star { font-size: 0.95em; }
 
 footer.controls {
+  flex-wrap: wrap;
   border-top: 1px solid var(--rule);
   margin-top: 2.5em;
   padding: 0.5em 0 2em;
@@ -185,3 +187,5 @@ h2 a { color: inherit; }
 .shuffle-row { display: flex; gap: 1.4em; flex-wrap: wrap; font-size: 0.85em; }
 .shuffle-row button { min-height: 44px; color: var(--quiet); }
 .shuffle-row .shuffle { color: var(--text); }
+:root[data-pictures="off"] .card img { display: none; }
+:root[data-pictures="off"] .card-title { margin-top: 0; }

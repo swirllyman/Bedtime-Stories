@@ -497,6 +497,19 @@
   });
   paintThemeButton();
 
+  // Pictures on Tonight's cards can be switched off; the choice is remembered.
+  var picBtn = document.getElementById('pictures-toggle');
+  function paintPicButton() {
+    picBtn.textContent = root.getAttribute('data-pictures') === 'off' ? 'Pictures on' : 'Pictures off';
+  }
+  picBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-pictures') === 'off' ? 'on' : 'off';
+    root.setAttribute('data-pictures', next);
+    saveRaw('bs.pictures', next);
+    paintPicButton();
+  });
+  paintPicButton();
+
   function currentSize() {
     var v = parseInt(getComputedStyle(root).getPropertyValue('--text-size'), 10);
     return isNaN(v) ? DEFAULT_SIZE : v;

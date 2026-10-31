@@ -10,13 +10,15 @@
   <script>
     // Apply saved theme and text size before first paint, so the screen never flashes bright.
     (function () {
-      var theme = 'dark', size = '';
+      var theme = 'dark', size = '', pictures = 'on';
       try {
         theme = localStorage.getItem('bs.theme') || 'dark';
         size = localStorage.getItem('bs.size') || '';
+        pictures = localStorage.getItem('bs.pictures') || 'on';
       } catch (e) {}
       var root = document.documentElement;
       root.setAttribute('data-theme', theme);
+      root.setAttribute('data-pictures', pictures);
       if (size) root.style.setProperty('--text-size', size + 'px');
       document.getElementById('theme-color').setAttribute('content', theme === 'light' ? '#f5efe3' : '#141210');
     })();
@@ -39,6 +41,8 @@
 
   <footer class="controls" aria-label="Reading settings">
     <button type="button" id="theme-toggle">Light mode</button>
+    <span class="sep" aria-hidden="true">·</span>
+    <button type="button" id="pictures-toggle">Pictures off</button>
     <span class="sep" aria-hidden="true">·</span>
     <button type="button" id="size-down" aria-label="Smaller text">A−</button>
     <button type="button" id="size-up" aria-label="Larger text">A+</button>

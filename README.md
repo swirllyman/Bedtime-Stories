@@ -13,7 +13,7 @@ All stories are public domain, taken word for word from Project Gutenberg editio
 - Beatrix Potter: *Peter Rabbit*, *Mrs. Tiggy-Winkle*, *Mrs. Tittlemouse*, *Two Bad Mice*
 - Thornton W. Burgess, *Old Mother West Wind* (1910)
 
-Illustrations are the originals from the same public-domain books (Blanche Fisher Wright, Milo Winter, Beatrix Potter, and Harrison Cady for the Burgess stories). They are dimmed in dark mode.
+Illustrations are the originals from the same public-domain books (Blanche Fisher Wright, Milo Winter, Beatrix Potter, and Harrison Cady for the Burgess stories). They are dimmed in dark mode, and the **Pictures off** switch at the bottom of every page hides them (the phone remembers the choice).
 
 Old books can carry things you would not read to a small child today, so each piece was screened by hand. Rhymes and stories with violence, hunting, punishment by beating, death, or ethnic and racial caricature were left out.
 

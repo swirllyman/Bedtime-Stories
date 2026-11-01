@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-01",
+      "ids": [
+        "goose-rain-rain-and-other-weather-rhymes",
+        "aesop-belling-the-cat",
+        "burgess-how-sammy-jay-was-found-out"
+      ]
+    },
+    {
       "date": "2026-10-31",
       "ids": [
         "goose-to-market-and-other-trotting-rhymes",

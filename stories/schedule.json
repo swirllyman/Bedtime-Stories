@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-02",
+      "ids": [
+        "goose-old-king-cole-and-other-rhymes",
+        "aesop-the-gnat-and-the-bull",
+        "potter-two-bad-mice"
+      ]
+    },
+    {
       "date": "2026-11-01",
       "ids": [
         "goose-rain-rain-and-other-weather-rhymes",

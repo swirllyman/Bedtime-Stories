@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-03",
+      "ids": [
+        "goose-polly-put-the-kettle-on-and-other-rhymes",
+        "aesop-the-young-crab-and-his-mother",
+        "burgess-peter-rabbit-plays-a-joke"
+      ]
+    },
+    {
       "date": "2026-11-02",
       "ids": [
         "goose-old-king-cole-and-other-rhymes",

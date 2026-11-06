@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-06",
+      "ids": [
+        "goose-pat-a-cake-and-other-clapping-rhymes",
+        "aesop-the-oak-and-the-reeds",
+        "burgess-bobby-coon-and-reddy-fox-play-tricks"
+      ]
+    },
+    {
       "date": "2026-11-05",
       "ids": [
         "goose-ride-a-cock-horse-and-other-rhymes",

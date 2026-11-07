@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-07",
+      "ids": [
+        "goose-baa-baa-black-sheep-and-other-rhymes",
+        "aesop-the-bundle-of-sticks",
+        "burgess-jerry-muskrat-s-party"
+      ]
+    },
+    {
       "date": "2026-11-06",
       "ids": [
         "goose-pat-a-cake-and-other-clapping-rhymes",

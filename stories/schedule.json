@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-09",
+      "ids": [
+        "goose-little-robin-redbreast-and-other-bird-rhymes",
+        "aesop-the-plane-tree",
+        "burgess-little-joe-otter-s-slippery-slide"
+      ]
+    },
+    {
       "date": "2026-11-08",
       "ids": [
         "goose-wee-willie-winkie-and-other-rhymes",

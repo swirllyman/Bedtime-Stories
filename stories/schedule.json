@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-10",
+      "ids": [
+        "goose-mary-mary-and-other-garden-rhymes",
+        "aesop-the-fox-and-the-grapes",
+        "burgess-billy-mink-s-swimming-party"
+      ]
+    },
+    {
       "date": "2026-11-09",
       "ids": [
         "goose-little-robin-redbreast-and-other-bird-rhymes",

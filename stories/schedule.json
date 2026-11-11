@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-11",
+      "ids": [
+        "goose-hickory-dickory-dock-and-other-counting-rhymes",
+        "aesop-the-lark-and-her-young-ones",
+        "potter-mrs-tiggy-winkle"
+      ]
+    },
+    {
       "date": "2026-11-10",
       "ids": [
         "goose-mary-mary-and-other-garden-rhymes",

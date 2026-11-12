@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-12",
+      "ids": [
+        "goose-hey-diddle-diddle-and-other-rhymes",
+        "aesop-the-boy-and-the-filberts",
+        "burgess-the-wilful-little-breeze"
+      ]
+    },
+    {
       "date": "2026-11-11",
       "ids": [
         "goose-hickory-dickory-dock-and-other-counting-rhymes",

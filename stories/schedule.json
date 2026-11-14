@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-14",
+      "ids": [
+        "goose-to-market-and-other-trotting-rhymes",
+        "aesop-the-mole-and-his-mother",
+        "potter-mrs-tittlemouse"
+      ]
+    },
+    {
       "date": "2026-11-13",
       "ids": [
         "goose-pussy-cat-and-other-kitten-rhymes",

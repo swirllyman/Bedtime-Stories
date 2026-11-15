@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-15",
+      "ids": [
+        "goose-rain-rain-and-other-weather-rhymes",
+        "aesop-the-north-wind-and-the-sun",
+        "burgess-how-sammy-jay-was-found-out"
+      ]
+    },
+    {
       "date": "2026-11-14",
       "ids": [
         "goose-to-market-and-other-trotting-rhymes",

@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-17",
+      "ids": [
+        "goose-polly-put-the-kettle-on-and-other-rhymes",
+        "potter-peter-rabbit",
+        "burgess-peter-rabbit-plays-a-joke"
+      ]
+    },
+    {
       "date": "2026-11-16",
       "ids": [
         "goose-old-king-cole-and-other-rhymes",

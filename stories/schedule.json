@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-18",
+      "ids": [
+        "goose-little-miss-muffet-and-other-rhymes",
+        "aesop-the-crow-and-the-pitcher",
+        "burgess-johnny-chuck-finds-the-best-thing-in-the-world"
+      ]
+    },
+    {
       "date": "2026-11-17",
       "ids": [
         "goose-polly-put-the-kettle-on-and-other-rhymes",

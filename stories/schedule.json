@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-20",
+      "ids": [
+        "goose-pat-a-cake-and-other-clapping-rhymes",
+        "aesop-the-town-mouse-and-the-country-mouse",
+        "burgess-bobby-coon-and-reddy-fox-play-tricks"
+      ]
+    },
+    {
       "date": "2026-11-19",
       "ids": [
         "goose-ride-a-cock-horse-and-other-rhymes",

@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-21",
+      "ids": [
+        "goose-baa-baa-black-sheep-and-other-rhymes",
+        "aesop-the-dog-and-his-reflection",
+        "burgess-jerry-muskrat-s-party"
+      ]
+    },
+    {
       "date": "2026-11-20",
       "ids": [
         "goose-pat-a-cake-and-other-clapping-rhymes",

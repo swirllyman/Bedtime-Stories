@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-22",
+      "ids": [
+        "goose-wee-willie-winkie-and-other-rhymes",
+        "aesop-belling-the-cat",
+        "burgess-how-reddy-fox-was-surprised"
+      ]
+    },
+    {
       "date": "2026-11-21",
       "ids": [
         "goose-baa-baa-black-sheep-and-other-rhymes",

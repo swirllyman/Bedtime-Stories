@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-23",
+      "ids": [
+        "goose-little-robin-redbreast-and-other-bird-rhymes",
+        "aesop-the-gnat-and-the-bull",
+        "burgess-little-joe-otter-s-slippery-slide"
+      ]
+    },
+    {
       "date": "2026-11-22",
       "ids": [
         "goose-wee-willie-winkie-and-other-rhymes",

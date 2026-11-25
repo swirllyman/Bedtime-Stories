@@ -1,6 +1,14 @@
 {
   "nights": [
     {
+      "date": "2026-11-25",
+      "ids": [
+        "goose-hickory-dickory-dock-and-other-counting-rhymes",
+        "aesop-the-lion-and-the-mouse",
+        "potter-mrs-tiggy-winkle"
+      ]
+    },
+    {
       "date": "2026-11-24",
       "ids": [
         "goose-mary-mary-and-other-garden-rhymes",
